@@ -5,6 +5,24 @@
     <title>Vets - PetClinic</title>
 </head>
 <body>
+<!--/*@thymesVar id ="owner" type="com.francescolacriola.sfgpetclinic.model.Vet"*/-->
 <h1 th:text="'List of Vets'">List of Vets.</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="vet : ${vets}"> <!-- owners is taken from the model (check the Controller class) -->
+        <td th:text="${vet?.id}">1</td> <!-- ? indicates a non safe operator: if we recive a null value -->
+        <td th:text="${vet?.firstName}">John</td>
+        <td th:text="${vet?.lastName}">Petrucci</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
