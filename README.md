@@ -1,11 +1,11 @@
 <h2>Done</h2>
 
-73 -> 79. 86 -> 95 da vedere
+73 -> 79. 86 -> 95 da vedere<br>
 map.entrySet().removeIf(entry -> entry.getValue().equals(object)); <br>
-Java Streams to order elements
-@SpringBootTest(classes = SfgPetClinicApplication.class)
+Java Streams to order elements<br>
+@SpringBootTest(classes = SfgPetClinicApplication.class)<br>
 
 Maven Spring Pet Clinic - Clean -> Package
 <ul>
-    <li>85 (Section 5)</li>
+    <li>128 (Section 8)</li>
 </ul>
