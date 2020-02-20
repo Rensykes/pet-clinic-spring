@@ -1,8 +1,10 @@
 package com.francescolacriola.sfgpetclinic.bootstrap;
 
 import com.francescolacriola.sfgpetclinic.model.Owner;
+import com.francescolacriola.sfgpetclinic.model.PetType;
 import com.francescolacriola.sfgpetclinic.model.Vet;
 import com.francescolacriola.sfgpetclinic.services.OwnerService;
+import com.francescolacriola.sfgpetclinic.services.PetTypeService;
 import com.francescolacriola.sfgpetclinic.services.VetService;
 import com.francescolacriola.sfgpetclinic.services.map.OwnerServiceMap;
 import com.francescolacriola.sfgpetclinic.services.map.VetServiceMap;
@@ -22,15 +24,29 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
 
-    public DataLoader(OwnerService ownerService, VetService vetService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+        PetType dog = new PetType();
+        dog.setName("Dog");
+
+        PetType savedDogPetType = petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        cat.setName("Cat");
+
+        PetType savedCatPetType = petTypeService.save(cat);
+
+        System.out.println("Loaded Pet Types");
+
         Owner owner1 = new Owner();
         //owner1.setId(1L);
         owner1.setFirstName("Michael");
