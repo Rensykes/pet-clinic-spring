@@ -7,5 +7,5 @@ Java Streams to order elements<br>
 
 Maven Spring Pet Clinic - Clean -> Package
 <ul>
-    <li>128 (Section 8)</li>
+    <li>145 (Section 8)</li>
 </ul>
